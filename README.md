@@ -93,7 +93,7 @@ explorar las pestañas.
 > Alternativas equivalentes: Render, Railway o Hugging Face Spaces (con SDK
 > "Streamlit"). El `requirements.txt` ya está listo para cualquiera de las tres.
 
-**URL del deploy:** _completar acá una vez desplegado_
+**URL del deploy:** tppythonuai2026almansafernandogit-gmoxb7xaycsk3rpxb9hd3p.streamlit.app
 
 ## Detalle técnico de las redes neuronales
 
