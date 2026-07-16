@@ -67,7 +67,7 @@ payroll-anomaly-detector/
 Requisitos: Python 3.10+
 
 ```bash
-git clone <URL_DE_ESTE_REPO>
+git clone <https://github.com/FernandoAlmansa/TP_Python_UAI_2026_Almansa_Fernando.git>
 cd payroll-anomaly-detector
 
 python3 -m venv venv
