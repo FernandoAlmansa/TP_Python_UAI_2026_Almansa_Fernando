@@ -368,7 +368,7 @@ def tab_prediccion_manual(df: pd.DataFrame) -> None:
 # ---------------------------------------------------------------------------
 
 def main() -> None:
-    st.title("🧾 PayrollLens")
+    st.title("PayrollLens")
     st.caption(
         "Detector de anomalías en liquidaciones de nómina — integra Análisis de datos con "
         "Pandas + Redes Neuronales (autoencoder no supervisado y clasificador supervisado). "
