@@ -58,6 +58,7 @@ payroll-anomaly-detector/
 ├── sample_data/
 │   └── payroll_sample.csv      # Dataset de ejemplo ya generado, por si querés probar sin generar uno nuevo
 ├── requirements.txt
+├── render.yaml
 ├── .streamlit/config.toml
 └── README.md
 ```
@@ -67,8 +68,8 @@ payroll-anomaly-detector/
 Requisitos: Python 3.10+
 
 ```bash
-git clone <https://github.com/FernandoAlmansa/TP_Python_UAI_2026_Almansa_Fernando.git>
-cd payroll-anomaly-detector
+git clone https://github.com/FernandoAlmansa/TP_Python_UAI_2026_Almansa_Fernando.git
+cd TP_Python_UAI_2026_Almansa_Fernando
 
 python3 -m venv venv
 source venv/bin/activate        # En Windows: venv\Scripts\activate
@@ -82,18 +83,31 @@ Se abre automáticamente en `http://localhost:8501`. Desde la barra lateral,
 tocá **"🎲 Generar datos"** para crear un dataset de ejemplo y arrancar a
 explorar las pestañas.
 
-## Deploy (Streamlit Community Cloud — gratis)
+## Deploy
 
-1. Subí este repo a GitHub (debe ser público).
-2. Entrá a [share.streamlit.io](https://share.streamlit.io) con tu cuenta de GitHub.
-3. **New app** → elegí el repo, la rama (`main`) y el archivo principal (`app.py`).
-4. Deploy. En un par de minutos queda la URL pública
-   (`https://<nombre-de-tu-app>.streamlit.app`).
+La app está desplegada en **Render** usando el blueprint `render.yaml` incluido
+en la raíz del repo (define build command, start command y plan free en un
+solo archivo, así el deploy es reproducible).
 
-> Alternativas equivalentes: Render, Railway o Hugging Face Spaces (con SDK
-> "Streamlit"). El `requirements.txt` ya está listo para cualquiera de las tres.
+**URL del deploy:** https://payroll-anomaly-detector.onrender.com/
 
-**URL del deploy:** tppythonuai2026almansafernandogit-gmoxb7xaycsk3rpxb9hd3p.streamlit.app
+**Repositorio:** https://github.com/FernandoAlmansa/TP_Python_UAI_2026_Almansa_Fernando
+
+Pasos para reproducir el deploy desde cero:
+
+1. Repo público en GitHub con `render.yaml` en la raíz.
+2. En [dashboard.render.com](https://dashboard.render.com) → **New +** → **Blueprint**.
+3. Elegir el repo; Render detecta `render.yaml` solo y arma el servicio
+   (`payroll-anomaly-detector`, plan Free).
+4. **Deploy Blueprint**. El primer build tarda 3-5 minutos.
+
+> Nota: en el plan free de Render, el servicio "duerme" tras 15 minutos sin
+> tráfico. El primer acceso después de eso tarda ~30-60 segundos en levantar
+> de nuevo — es normal, no es un error.
+
+> Alternativa equivalente: [Streamlit Community Cloud](https://share.streamlit.io)
+> (gratis, pensada específicamente para apps de Streamlit). El `requirements.txt`
+> ya está listo para cualquiera de las dos.
 
 ## Detalle técnico de las redes neuronales
 
